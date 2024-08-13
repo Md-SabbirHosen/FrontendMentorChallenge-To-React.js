@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
+import plugin from "tailwindcss/plugin";
+
 export default {
   content: [
     "./index.html",
@@ -25,5 +27,13 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents }) {
+      addComponents({
+        ".container": {
+          "@apply w-[90%] mx-auto px-5 md:px-16  xl:w-[80%]": {},
+        },
+      });
+    }),
+  ],
 };

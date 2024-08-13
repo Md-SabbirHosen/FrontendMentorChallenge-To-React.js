@@ -16,3 +16,24 @@ import product3Image from "./products/image-product-3.jpg";
 import product4Image from "./products/image-product-4.jpg";
 import imageAvatar from "./image-avatar.png";
 import logo from "./logo.svg";
+
+export {
+  cartIcon,
+  closeIcon,
+  deleteIcon,
+  menuIcon,
+  minusIcon,
+  nextIcon,
+  plusIcon,
+  previousIcon,
+  product1Thumbnail,
+  product2Thumbnail,
+  product3Thumbnail,
+  product4Thumbnail,
+  product1Image,
+  product2Image,
+  product3Image,
+  product4Image,
+  imageAvatar,
+  logo,
+};
