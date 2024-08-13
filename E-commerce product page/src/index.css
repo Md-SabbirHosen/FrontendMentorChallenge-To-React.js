@@ -6,6 +6,6 @@
 
 @layer base {
   body {
-    @apply font-kumbh bg-white text-base;
+    @apply font-kumbh bg-white text-neutral-2 text-base;
   }
 }
