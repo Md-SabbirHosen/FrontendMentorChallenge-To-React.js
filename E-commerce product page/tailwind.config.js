@@ -31,7 +31,7 @@ export default {
     plugin(function ({ addComponents }) {
       addComponents({
         ".container": {
-          "@apply w-[90%] mx-auto px-5 md:px-16  xl:w-[80%]": {},
+          "@apply w-[95%] mx-auto px-4 md:px-16 md:w-[85%]": {},
         },
       });
     }),
