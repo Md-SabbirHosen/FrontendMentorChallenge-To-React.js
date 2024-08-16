@@ -3,13 +3,16 @@ import { navigation } from "../constants";
 import { closeIcon } from "../assets";
 
 const Navbar = (props) => {
-  const toggleNavigation = () => {
-    props.toggleNavigation();
+  const toggleNavigationHandler = () => {
+    props.onToggleNavigation();
   };
   return (
     <nav className={`${props.openNavigation ? "flex" : "hidden"} md:flex `}>
-      <ul className="fixed top-0 left-0 flex items-start flex-col bg-white w-[70%] h-full p-6 z-10 shadow-2xl md:flex-row md:items-center md:bg-transparent md:static md:shadow-none">
-        <a className="block mb-8 cursor-pointer" onClick={toggleNavigation}>
+      <ul className="fixed top-0 left-0 flex items-start flex-col bg-white w-[70%] h-full p-6 z-20 shadow-2xl md:flex-row md:items-center md:bg-transparent md:static md:shadow-none">
+        <a
+          className="block mb-8 cursor-pointer"
+          onClick={toggleNavigationHandler}
+        >
           <img src={closeIcon} alt="closeIcon" />
         </a>
         {navigation.map((navItem) => (

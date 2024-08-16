@@ -1,5 +1,7 @@
+import ReactDom from "react-dom";
 import { useState } from "react";
-import { menuIcon, logo, cartIcon, imageAvatar } from "../assets";
+import { cartIcon, imageAvatar, logo, menuIcon } from "../assets";
+import Backdrop from "./Backdrop";
 import Navbar from "./Navbar";
 
 const MainNavigation = () => {
@@ -18,37 +20,48 @@ const MainNavigation = () => {
             src={menuIcon}
             width={16}
             height={15}
-            alt="menuIcon"
+            alt="Menu_Icon"
             onClick={toggleNavigation}
           />
         </div>
-        <div>
-          <img
-            className="w-full h-full object-cover cursor-pointer"
-            width={138}
-            height={20}
-            src={logo}
-            alt="logo"
-          />
-        </div>
+
+        <img
+          className="cursor-pointer"
+          width={138}
+          height={20}
+          src={logo}
+          alt="Logo"
+        />
+
         <Navbar
           openNavigation={openNavigation}
-          toggleNavigation={toggleNavigation}
+          onToggleNavigation={toggleNavigation}
         />
+        {openNavigation &&
+          ReactDom.createPortal(
+            <Backdrop onToggleNavigation={toggleNavigation} />,
+            document.getElementById("backdrop-root")
+          )}
       </div>
 
       <div className="flex gap-6 items-center md:gap-10">
         <img
-          className="w-[100%] h-[20px]  cursor-pointer"
+          className="cursor-pointer"
+          width={22}
+          height={20}
           src={cartIcon}
-          alt="cartIcon"
+          alt="Cart_Icon"
         />
 
-        <img
-          className="w-[100%] h-[30px] cursor-pointer transition-all rounded-full border-primary-1 hover:border-4 md:h-[50px]"
-          src={imageAvatar}
-          alt="imageAvatar"
-        />
+        <div className="h-[30px] cursor-pointer transition-all rounded-full border-primary-1 hover:border-4 md:h-[50px]">
+          <img
+            className="w-full h-full rounded-full"
+            width={100}
+            height={100}
+            src={imageAvatar}
+            alt="User_Avatar"
+          />
+        </div>
       </div>
     </header>
   );
