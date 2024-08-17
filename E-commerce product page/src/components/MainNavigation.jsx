@@ -52,7 +52,6 @@ const MainNavigation = () => {
           src={cartIcon}
           alt="Cart_Icon"
         />
-
         <div className="h-[30px] cursor-pointer transition-all rounded-full border-primary-1 hover:border-4 md:h-[50px]">
           <img
             className="w-full h-full rounded-full"
