@@ -1,7 +1,7 @@
 import ReactDom from "react-dom";
 import { useState } from "react";
 import { cartIcon, imageAvatar, logo, menuIcon } from "../assets";
-import Backdrop from "./Backdrop";
+import Backdrop from "./design/Backdrop";
 import Navbar from "./Navbar";
 
 const MainNavigation = () => {
