@@ -18,8 +18,8 @@ export const navigation = [
 ];
 
 export const images = [
-  { id: "1", largeImage: product1Image, smallImage: product1Thumbnail },
-  { id: "2", largeImage: product2Image, smallImage: product2Thumbnail },
-  { id: "3", largeImage: product3Image, smallImage: product3Thumbnail },
-  { id: "4", largeImage: product4Image, smallImage: product4Thumbnail },
+  { id: "0", largeImage: product1Image, smallImage: product1Thumbnail },
+  { id: "1", largeImage: product2Image, smallImage: product2Thumbnail },
+  { id: "2", largeImage: product3Image, smallImage: product3Thumbnail },
+  { id: "3", largeImage: product4Image, smallImage: product4Thumbnail },
 ];

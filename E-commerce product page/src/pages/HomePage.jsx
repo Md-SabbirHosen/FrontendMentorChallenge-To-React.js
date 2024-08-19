@@ -1,22 +1,44 @@
+import { useState } from "react";
 import { nextIcon, previousIcon } from "../assets";
 import RenderArrow from "../components/design/RenderArrow";
 import { images } from "../constants";
 
 const HomePage = () => {
-  const displayImage = images[0].largeImage;
+  const [imageIndex, setImageIndex] = useState(0);
+  const displayImage = images[imageIndex].largeImage;
+
+  const goBackHandler = () => {
+    return imageIndex === 0
+      ? setImageIndex(0)
+      : setImageIndex((prevIndex) => prevIndex - 1);
+  };
+
+  const goForwardHandler = () => {
+    return imageIndex === images.length - 1
+      ? setImageIndex(images.length - 1)
+      : setImageIndex((prevIndex) => prevIndex + 1);
+  };
 
   return (
     <>
-      <div className="relative w-screen flex  items-center  md:flex-col">
-        <RenderArrow image={previousIcon} sideDirection="left" />
-        <div className="w-full h-auto">
+      <div className="relative w-screen flex  md:flex-col">
+        <div className="w-full md:w-[400px] h-auto">
           <img
-            className="object-cover md:rounded-xl md:w-[400px] md:h-[400px]"
+            className="object-cover md:rounded-xl w-full h-auto"
             src={displayImage}
             alt="Display Large Image"
           />
         </div>
-        <RenderArrow image={nextIcon} sideDirection="right" />
+        <RenderArrow
+          image={previousIcon}
+          sideDirection="left"
+          onClick={goBackHandler}
+        />
+        <RenderArrow
+          image={nextIcon}
+          sideDirection="right"
+          onClick={goForwardHandler}
+        />
       </div>
       <div className="">right</div>
     </>

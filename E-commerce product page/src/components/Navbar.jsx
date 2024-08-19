@@ -8,7 +8,7 @@ const Navbar = (props) => {
   };
   return (
     <nav className={`${props.openNavigation ? "flex" : "hidden"} md:flex `}>
-      <ul className="fixed top-0 left-0 flex items-start flex-col bg-white w-[70%] h-full p-6 z-10 shadow-2xl md:flex-row md:items-center md:bg-transparent md:static md:shadow-none">
+      <ul className="fixed top-0 left-0 flex items-start flex-col bg-white w-[70%] h-full p-6 z-30 shadow-2xl md:flex-row md:items-center md:bg-transparent md:static md:shadow-none">
         <a
           className="block mb-8 cursor-pointer"
           onClick={toggleNavigationHandler}
