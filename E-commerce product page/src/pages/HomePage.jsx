@@ -5,6 +5,7 @@ import { images } from "../constants";
 
 const HomePage = () => {
   const [imageIndex, setImageIndex] = useState(0);
+
   const displayImage = images[imageIndex].largeImage;
 
   const goBackHandler = () => {
@@ -24,7 +25,7 @@ const HomePage = () => {
       <div className="relative w-screen flex  md:flex-col">
         <div className="w-full md:w-[400px] h-auto">
           <img
-            className="object-cover md:rounded-xl w-full h-auto"
+            className="object-cover md:rounded-xl"
             src={displayImage}
             alt="Display Large Image"
           />
