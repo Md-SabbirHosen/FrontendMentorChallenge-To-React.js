@@ -1,29 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nextIcon, previousIcon } from "../assets";
 import RenderArrow from "./design/RenderArrow";
 
 const Carousel = (props) => {
+  const imageSlides = props.children;
   const [imageIndex, setImageIndex] = useState(0);
 
   const goBackHandler = () => {
-    return imageIndex === 0
-      ? setImageIndex(0)
-      : setImageIndex((prevIndex) => prevIndex - 1);
+    setImageIndex((imageIndex) =>
+      imageIndex === 0 ? imageSlides.length - 1 : imageIndex - 1
+    );
   };
 
   const goForwardHandler = () => {
-    return imageIndex === props.children.length - 1
-      ? setImageIndex(props.children.length - 1)
-      : setImageIndex((prevIndex) => prevIndex + 1);
+    setImageIndex((imageIndex) =>
+      imageIndex === imageSlides.length - 1 ? 0 : imageIndex + 1
+    );
   };
+  useEffect(() => {
+    const slideInterval = setInterval(goForwardHandler, 3000);
+    return () => clearInterval(slideInterval);
+  }, []);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <div
         className="flex transition-transform ease-out  duration-500"
         style={{ transform: `translateX(-${imageIndex * 100}%)` }}
       >
-        {props.children}
+        {imageSlides}
       </div>
       <RenderArrow
         image={previousIcon}
