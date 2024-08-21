@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { nextIcon, previousIcon } from "../assets";
 import RenderArrow from "./design/RenderArrow";
 
-const Carousel = (props) => {
-  const imageSlides = props.children;
+const Carousel = ({ children: imageSlides }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   const goBackHandler = () => {
@@ -17,8 +16,9 @@ const Carousel = (props) => {
       imageIndex === imageSlides.length - 1 ? 0 : imageIndex + 1
     );
   };
+
   useEffect(() => {
-    const slideInterval = setInterval(goForwardHandler, 3000);
+    const slideInterval = setInterval(goForwardHandler, 4000);
     return () => clearInterval(slideInterval);
   }, []);
 
