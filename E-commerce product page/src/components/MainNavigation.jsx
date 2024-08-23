@@ -37,6 +37,7 @@ const MainNavigation = () => {
           openNavigation={openNavigation}
           onToggleNavigation={toggleNavigation}
         />
+
         {openNavigation &&
           ReactDom.createPortal(
             <Backdrop onToggleNavigation={toggleNavigation} />,

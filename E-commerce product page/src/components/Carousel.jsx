@@ -23,7 +23,7 @@ const Carousel = ({ children: imageSlides }) => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative -mx-8 overflow-hidden">
       <div
         className="flex transition-transform ease-out  duration-500"
         style={{ transform: `translateX(-${imageIndex * 100}%)` }}

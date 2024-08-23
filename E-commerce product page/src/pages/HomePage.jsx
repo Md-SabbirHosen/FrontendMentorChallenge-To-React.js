@@ -18,7 +18,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="w-screen flex md:basis-1/2  md:flex-col  ">
+      <div className="relative flex basis-1/2 md:flex-col">
         {isMobile && (
           <Carousel>
             {images.map((image) => (
@@ -37,24 +37,26 @@ const HomePage = () => {
         )}
       </div>
 
-      <div className="flex flex-col p-6 md:basis-1/2">
+      <div className="flex flex-col py-6 basis-1/2 ">
         <p className="font-bold uppercase tracking-widest text-sm mb-6">
           Sneaker Company
         </p>
         <h1 className="text-3xl text-black font-bold  md:text-4xl">
           Fall Limited Edition <br /> Sneakers
         </h1>
-        <p className="">
-          These low-profile sneakers are your perfect casual wear <br />
-          companion. Featuring a durable rubber outer sole, they'll <br />
-          withstand everything the weather can offer.
+        <p className="text-lg my-6 md:my-10">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
         </p>
-        <div className="flex md:flex-col">
-          <div className="flex">
-            <p>$125.00</p>
-            <p>50%</p>
+        <div className="flex justify-between md:flex-col">
+          <div className="flex items-center">
+            <span className="text-3xl font-bold text-black">$125.00</span>
+            <span className="bg-black text-white font-bold ml-4  py-1 px-2 rounded-lg">
+              50%
+            </span>
           </div>
-          <p>$250.00</p>
+          <p className="line-through font-bold md:mt-2">$250.00</p>
         </div>
         <div className="flex flex-col md:flex-row">
           <button>-</button>

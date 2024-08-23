@@ -5,7 +5,7 @@ const RootLayout = () => {
   return (
     <>
       <MainNavigation />
-      <main className="container flex justify-between flex-col md:flex-row md:px-16 md:py-20  ">
+      <main className="container flex flex-col gap-4 md:flex-row md:px-12 md:py-20">
         <Outlet />
       </main>
     </>
