@@ -18,7 +18,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="relative flex basis-1/2 md:flex-col">
+      <div className="relative flex basis-1/2  md:flex-col">
         {isMobile && (
           <Carousel>
             {images.map((image) => (
@@ -31,8 +31,21 @@ const HomePage = () => {
           </Carousel>
         )}
         {!isMobile && (
-          <div className="w-[400px] h-[400px] ">
-            <img className="rounded-xl" src={images[0].largeImage} alt="" />
+          <div className="w-[400px] h-[400px] flex gap-20 md:flex-col ">
+            <div className="cursor-pointer">
+              <img className="rounded-xl" src={images[0].largeImage} alt="" />
+            </div>
+            <div className="flex justify-center gap-4 pb-20">
+              {images.map((image) => (
+                <div className="w-20 h-20 rounded-lg bg-primary-1 transition-all border-primary-1 hover:border-2 hover:opacity-60">
+                  <img
+                    className="rounded-lg cursor-pointer "
+                    src={image.smallImage}
+                    alt={`Thumbnail-image-${image.id}`}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -58,10 +71,12 @@ const HomePage = () => {
           </div>
           <p className="line-through font-bold md:mt-2">$250.00</p>
         </div>
-        <div className="flex flex-col md:flex-row">
-          <button>-</button>
-          <p>0</p>
-          <button>+</button>
+        <div>
+          <div className="flex flex-col bg-neutral-3 md:flex-row">
+            <button>-</button>
+            <p>0</p>
+            <button>+</button>
+          </div>
         </div>
       </div>
     </>

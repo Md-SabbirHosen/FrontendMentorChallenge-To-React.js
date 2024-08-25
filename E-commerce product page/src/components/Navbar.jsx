@@ -8,10 +8,12 @@ const Navbar = (props) => {
   };
 
   return (
-    <nav className={`${props.openNavigation ? "flex" : "hidden"}  md:flex `}>
-      <ul className="fixed top-0 left-0 flex items-start flex-col bg-white w-[70%] h-full p-6 z-30 shadow-2xl md:flex-row md:items-center md:bg-transparent md:static md:shadow-none">
+    <nav
+      className={`fixed top-0 left-0 bg-white w-[70%] h-full p-6 z-30 shadow-2xl transition-transform duration-300 ease-in-out ${props.openNavigation ? "translate-x-0" : "-translate-x-full"} md:static md:translate-x-0 md:shadow-none`}
+    >
+      <ul className="flex items-start flex-col   md:flex-row md:items-center md:bg-transparent ">
         <a
-          className="block mb-8 cursor-pointer"
+          className="block mb-8 cursor-pointer md:hidden"
           onClick={toggleNavigationHandler}
         >
           <img src={closeIcon} alt="closeIcon" />
