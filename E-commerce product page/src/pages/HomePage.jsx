@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Carousel from "../components/Carousel";
-import { images } from "../constants";
+import Button from "../components/design/Button";
+import { images } from "../constants/index";
+import { plusIcon, minusIcon } from "../assets";
 
 const HomePage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -71,12 +73,17 @@ const HomePage = () => {
           </div>
           <p className="line-through font-bold md:mt-2">$250.00</p>
         </div>
-        <div>
-          <div className="flex flex-col bg-neutral-3 md:flex-row">
-            <button>-</button>
-            <p>0</p>
-            <button>+</button>
+        <div className="flex flex-col  mt-8 md:flex-row md:space-x-4">
+          <div className="flex flex-col p-2 rounded-lg space-x-8 bg-neutral-3/20 md:flex-row">
+            <button className="p-2 ">
+              <img src={minusIcon} alt="Minus Icon" />
+            </button>
+            <p className="text-black font-bold">0</p>
+            <button className="p-2 ">
+              <img src={plusIcon} alt="Plus Icon" />
+            </button>
           </div>
+          <Button>Add to cart</Button>
         </div>
       </div>
     </>
