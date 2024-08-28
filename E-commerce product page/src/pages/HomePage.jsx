@@ -94,9 +94,9 @@ const HomePage = () => {
           </div>
           <p className="line-through font-bold md:mt-2">$250.00</p>
         </div>
-        <div className="flex flex-col  mt-8 md:flex-row md:space-x-4">
-          <div className="flex flex-col p-2 rounded-lg space-x-8 bg-neutral-3/20 md:flex-row">
-            <button className="p-2 ">
+        <div className="flex flex-col space-y-6  mt-8 md:flex-row md:space-x-4 md:space-y-0 ">
+          <div className="flex justify-between items-center p-3   rounded-lg space-x-8 bg-neutral-3/20 md:p-2">
+            <button className="p-2">
               <img src={minusIcon} alt="Minus Icon" />
             </button>
             <p className="text-black font-bold">0</p>
