@@ -7,10 +7,15 @@ import { plusIcon, minusIcon } from "../assets";
 const HomePage = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [fade, setFade] = useState(false);
 
-  const imageChangeHandler = () => {
-    setImageIndex((prevIndex) => prevIndex + 1);
-  };
+  useEffect(() => {
+    setFade(false);
+    const timeoutId = setTimeout(() => {
+      setFade(true);
+    }, 500);
+    return () => clearTimeout(timeoutId);
+  }, [imageIndex]);
 
   useEffect(() => {
     const updateMedia = () => {
@@ -39,7 +44,9 @@ const HomePage = () => {
         )}
         {!isMobile && (
           <div className="w-[400px] h-[400px] flex gap-20 md:flex-col ">
-            <div className="cursor-pointer">
+            <div
+              className={`cursor-pointer transition-all duration-500 ${fade ? "opacity-100" : "opacity-70"}  `}
+            >
               <img
                 className="rounded-xl"
                 src={images[imageIndex].largeImage}
@@ -49,8 +56,10 @@ const HomePage = () => {
             <div className="flex justify-center gap-4 pb-20">
               {images.map((image) => (
                 <div
-                  className="w-20 h-20 rounded-lg bg-primary-1 transition-all border-primary-1 hover:border-2 hover:opacity-60"
-                  onClick={imageChangeHandler}
+                  className="w-20 h-20 rounded-lg bg-primary-1 transition-all border-primary-1 hover:border-2 hover:opacity-60 "
+                  onClick={() => {
+                    setImageIndex(image.id);
+                  }}
                 >
                   <img
                     className="rounded-lg cursor-pointer "
