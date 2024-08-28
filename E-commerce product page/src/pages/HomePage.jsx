@@ -5,7 +5,12 @@ import { images } from "../constants/index";
 import { plusIcon, minusIcon } from "../assets";
 
 const HomePage = () => {
+  const [imageIndex, setImageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  const imageChangeHandler = () => {
+    setImageIndex((prevIndex) => prevIndex + 1);
+  };
 
   useEffect(() => {
     const updateMedia = () => {
@@ -35,11 +40,18 @@ const HomePage = () => {
         {!isMobile && (
           <div className="w-[400px] h-[400px] flex gap-20 md:flex-col ">
             <div className="cursor-pointer">
-              <img className="rounded-xl" src={images[0].largeImage} alt="" />
+              <img
+                className="rounded-xl"
+                src={images[imageIndex].largeImage}
+                alt=""
+              />
             </div>
             <div className="flex justify-center gap-4 pb-20">
               {images.map((image) => (
-                <div className="w-20 h-20 rounded-lg bg-primary-1 transition-all border-primary-1 hover:border-2 hover:opacity-60">
+                <div
+                  className="w-20 h-20 rounded-lg bg-primary-1 transition-all border-primary-1 hover:border-2 hover:opacity-60"
+                  onClick={imageChangeHandler}
+                >
                   <img
                     className="rounded-lg cursor-pointer "
                     src={image.smallImage}
