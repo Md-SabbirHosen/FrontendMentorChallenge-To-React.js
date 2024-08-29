@@ -43,15 +43,17 @@ const HomePage = () => {
           </Carousel>
         )}
         {!isMobile && (
-          <div className="w-[400px] h-[400px] flex gap-20 md:flex-col ">
-            <div
-              className={`cursor-pointer transition-all duration-500 ${fade ? "opacity-100" : "opacity-70"}  `}
-            >
-              <img
-                className="rounded-xl"
-                src={images[imageIndex].largeImage}
-                alt=""
-              />
+          <div className="w-[400px] h-[400px]  flex gap-20 md:flex-col ">
+            <div className=" bg-neutral-3/20 rounded-xl">
+              <div
+                className={` cursor-pointer  transition-opacity duration-75 ${fade ? "opacity-100 " : "opacity-0 mix-blend-overlay "}  `}
+              >
+                <img
+                  className="rounded-xl"
+                  src={images[imageIndex].largeImage}
+                  alt=""
+                />
+              </div>
             </div>
             <div className="flex justify-center gap-4 pb-20">
               {images.map((image) => (
@@ -60,6 +62,7 @@ const HomePage = () => {
                   onClick={() => {
                     setImageIndex(image.id);
                   }}
+                  key={image.id}
                 >
                   <img
                     className="rounded-lg cursor-pointer "
