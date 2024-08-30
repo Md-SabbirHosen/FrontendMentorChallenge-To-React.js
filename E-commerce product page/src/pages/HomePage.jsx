@@ -43,10 +43,10 @@ const HomePage = () => {
           </Carousel>
         )}
         {!isMobile && (
-          <div className="w-[400px] h-[400px]  flex gap-20 md:flex-col ">
+          <div className="w-[400px] h-[400px] flex gap-20 md:flex-col ">
             <div className=" bg-neutral-3/20 rounded-xl">
               <div
-                className={` cursor-pointer  transition-opacity duration-75 ${fade ? "opacity-100 " : "opacity-0 mix-blend-overlay "}  `}
+                className={`cursor-pointer  transition-opacity duration-75 ${fade ? "opacity-100 " : "opacity-0 "}  `}
               >
                 <img
                   className="rounded-xl"
