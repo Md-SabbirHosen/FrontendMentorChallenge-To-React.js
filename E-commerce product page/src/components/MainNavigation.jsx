@@ -51,7 +51,10 @@ const MainNavigation = () => {
       </div>
 
       <div className="flex gap-6 items-center md:gap-10">
-        <div onClick={cartOpenHandler}>
+        <div className="relative" onClick={cartOpenHandler}>
+          <span className="absolute -top-2 -right-2 text-white rounded-xl text-xs bg-primary-1 px-2">
+            3
+          </span>
           <img
             className="cursor-pointer"
             width={22}
@@ -70,7 +73,7 @@ const MainNavigation = () => {
           />
         </div>
       </div>
-      {showCart && <Cart />}
+      {<Cart onShowCart={showCart} />}
     </header>
   );
 };

@@ -107,7 +107,7 @@ const HomePage = () => {
               <img src={plusIcon} alt="Plus Icon" />
             </button>
           </div>
-          <Button>Add to cart</Button>
+          <Button cartIcon="true">Add to cart</Button>
         </div>
       </div>
     </>
