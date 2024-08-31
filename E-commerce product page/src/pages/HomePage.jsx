@@ -8,6 +8,7 @@ const HomePage = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [fade, setFade] = useState(false);
+  const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     setFade(false);

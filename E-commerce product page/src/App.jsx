@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import MenPage from "./pages/MenPage";
 import RootLayout from "./pages/Root";
 import WomenPage from "./pages/WomenPage";
+import { CartContextProvider } from "./store/cart-context";
 
 function App() {
   const router = createBrowserRouter([
@@ -23,7 +24,11 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <CartContextProvider>
+      <RouterProvider router={router} />
+    </CartContextProvider>
+  );
 }
 
 export default App;

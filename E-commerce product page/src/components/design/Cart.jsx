@@ -4,7 +4,7 @@ import Button from "./Button";
 const Cart = (props) => {
   return (
     <div
-      className={`absolute inset-x-0  z-[25]   rounded-lg   bg-white  transition-all duration-500 ease-in-out ${props.onShowCart ? "shadow-2xl translate-y-48 " : "shadow-sm -translate-y-48 "}    md:w-80 md:left-2/3`}
+      className={`absolute inset-x-0  z-[25]   rounded-lg   bg-white  transition-all duration-500 ease-in-out ${props.onShowCart ? "shadow-2xl translate-y-48 md:translate-y-56 " : "shadow-sm -translate-y-48 md:-translate-y-56 "}    md:w-80 md:left-2/3`}
     >
       <h1 className="px-6 py-4 text-xl text-black font-bold border-b-2">
         Cart
@@ -20,7 +20,9 @@ const Cart = (props) => {
               $125.00x3 <span className="text-black font-bold">$375.00</span>
             </p>
           </div>
-          <img src={deleteIcon} alt="" />
+          <div>
+            <img src={deleteIcon} alt="Delete Icon" />
+          </div>
         </div>
         <Button>Checkout</Button>
       </div>

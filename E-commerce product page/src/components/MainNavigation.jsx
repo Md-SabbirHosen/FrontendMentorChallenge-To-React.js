@@ -51,7 +51,7 @@ const MainNavigation = () => {
       </div>
 
       <div className="flex gap-6 items-center md:gap-10">
-        <div className="relative" onClick={cartOpenHandler}>
+        <div className="relative cursor-pointer" onClick={cartOpenHandler}>
           <span className="absolute -top-2 -right-2 text-white rounded-xl text-xs bg-primary-1 px-2">
             3
           </span>
