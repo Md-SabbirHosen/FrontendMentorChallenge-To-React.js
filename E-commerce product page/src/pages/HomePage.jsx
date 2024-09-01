@@ -10,6 +10,15 @@ const HomePage = () => {
   const [fade, setFade] = useState(false);
   const [amount, setAmount] = useState(0);
 
+  const unitIncreaseHandler = () => {
+    setAmount((prev) => prev + 1);
+  };
+
+  const unitDecreaseHandler = () => {
+    if (amount === 0) return;
+    setAmount((prev) => prev - 1);
+  };
+
   useEffect(() => {
     setFade(false);
     const timeoutId = setTimeout(() => {
@@ -100,15 +109,23 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col space-y-6  mt-8 md:flex-row md:space-x-4 md:space-y-0 ">
           <div className="flex justify-between items-center p-3   rounded-lg space-x-8 bg-neutral-3/20 md:p-2">
-            <button className="p-2">
+            <button
+              onClick={unitDecreaseHandler}
+              className="p-2 hover:opacity-50"
+            >
               <img src={minusIcon} alt="Minus Icon" />
             </button>
-            <p className="text-black font-bold">0</p>
-            <button className="p-2 ">
+            <p className="text-black font-bold w-2">{amount}</p>
+            <button
+              onClick={unitIncreaseHandler}
+              className="p-2  hover:opacity-50"
+            >
               <img src={plusIcon} alt="Plus Icon" />
             </button>
           </div>
-          <Button cartIcon="true">Add to cart</Button>
+          <Button className="hover:opacity-50" cartIcon="true">
+            Add to cart
+          </Button>
         </div>
       </div>
     </>

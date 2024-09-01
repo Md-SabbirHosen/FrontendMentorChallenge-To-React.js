@@ -2,8 +2,10 @@ import React, { useState } from "react";
 
 const CartContext = React.createContext({
   totalAmount: 0,
+  totalPrice: 0,
   addUnit: () => {},
   removeUnit: () => {},
+  deleteCart: () => {},
 });
 
 export const CartContextProvider = (props) => {
@@ -17,10 +19,14 @@ export const CartContextProvider = (props) => {
     setTotalAmount((prevAmount) => prevAmount - 1);
   };
 
+  const deleteCartHandler = () => {};
+
   const cartContext = {
     totalAmount: totalAmount,
+    totalPrice: 0,
     addUnit: addUnitHandler,
     removeUnit: removeUnitHandler,
+    deleteCart: deleteCartHandler,
   };
 
   return (
